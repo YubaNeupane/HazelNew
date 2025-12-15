@@ -8,6 +8,7 @@
 
 // -- HAZEL INCLUDES --------------
 #include "Hazel/Application.h"
+#include "Hazel/Log.h"
 
 
 // -- ENTRY POINT -----------------
