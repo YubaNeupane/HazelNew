@@ -19,7 +19,7 @@ project "Hazel"
 	location "Hazel"
 	kind "SharedLib"
 	language "C++"
-	buildoptions{"/utf-8", "/MDd"}
+	buildoptions{"/utf-8"}
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -64,14 +64,20 @@ project "Hazel"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		staticruntime "off"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		staticruntime "off"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		staticruntime "off"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
@@ -112,12 +118,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		staticruntime "off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		staticruntime "off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		staticruntime "off"
 		optimize "On"
