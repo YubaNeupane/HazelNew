@@ -32,6 +32,7 @@ public:
 	}
 	void OnEvent(Hazel::Event& event) override
 	{
+
 		if (event.GetEventType() == Hazel::EventType::KeyPressed)
 		{
 			Hazel::KeyPressedEvent& e = (Hazel::KeyPressedEvent&)event;
