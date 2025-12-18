@@ -31,6 +31,8 @@ namespace Hazel {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
+		unsigned int m_VertexArrayID, m_VertexBufferID, m_IndexBufferID;
+
 	private:
 		static Application* s_Instance;
 	};
